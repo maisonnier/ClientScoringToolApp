@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" /> -->
+	<title>Document</title>
+	<style>
+		* { margin: 0; padding: 0; }
+
+		html {
+			background: url(static/images/wallstreet.jpg) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		#page-wrap { width: 400px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+		p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
+	</style>
+</head>
+<body style="text-align: center;background-color: #FFFFFF; display:table; margin:50px;  " id="clock">
+	<div style="margin:25px;">
+		<h1>Please choose a Client Credit parameter to analyze:</h1>
+		<br>
+		<br>
+		<form class = "client_param_form" method="POST" action="/submitted">
+			<select name="select_client_param" id="feature-select">
+				<option value="">--Select Parameter--</option>
+				<option value="EXT_SOURCE_3">EXT_SOURCE_3</option>
+				<option value="EXT_SOURCE_1">EXT_SOURCE_1</option>
+				<option value="EXT_SOURCE_2">EXT_SOURCE_2</option>
+				<option value="AMT_ANNUITY">AMT_ANNUITY</option>
+				<option value="DAYS_BIRTH">DAYS_BIRTH</option>
+				<option value="AMT_CREDIT">AMT_CREDIT</option>
+				<option value="DAYS_LAST_PHONE_CHANGE">DAYS_LAST_PHONE_CHANGE</option>
+				<option value="AMT_GOODS_PRICE">AMT_GOODS_PRICE</option>
+				<option value="DAYS_ID_PUBLISH">DAYS_ID_PUBLISH</option>
+				<option value="DAYS_EMPLOYED">DAYS_EMPLOYED</option>
+				<option value="AMT_INCOME_TOTAL">AMT_INCOME_TOTAL</option>
+				<option value="OWN_CAR_AGE">OWN_CAR_AGE</option>
+			</select>
+			<br>
+			<br>
+			<input class="btn" type="submit" value="submit" style="height:50px;width:150px">
+		</form>
+	</div>
+</body>
+</html>

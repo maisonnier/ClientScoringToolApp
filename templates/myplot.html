@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" /> -->
+	<title>Document</title>
+	<style>
+		* { margin: 0; padding: 0; }
+
+		html {
+			background: url(static/images/wallstreet.jpg) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		#page-wrap { width: 400px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+		p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
+	</style>
+</head>
+<body style="text-align: center;background-color: #FFFFFF; display:table; margin:50px;  " id="clock">
+	<div style="margin:25px;">
+		<p align="left"><a href=home ><button class=grey style="height:50px;width:150px;color: #FF0000;" >HOME (New Analysis)</button></a></p>
+		<h1>Selected Client parameter: <b style="color: #FF0000;">{{selected_param}}</b></h1>
+		<br>
+		<h4>Graph: X-axis: "{{selected_param}} values", Y-axis: "Histogram - Cummulative number"</h4>
+		<br>
+		<h4>Client parameter: "<b style="color: #F442F7;">Purple line</b>", Other Clients: "<b style="color: #2077B4;">Blue histogram</b>"</h4>
+		<img src='data:image/png;base64,{{data}}'/>
+		<p align="left"><a href=analyse ><button class=grey style="height:50px;width:150px">Analyze another parameter</button></a></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" /> -->
+	<title>Document</title>
+	<style>
+		* { margin: 0; padding: 0; }
+
+		html {
+			background: url(static/images/wallstreet.jpg) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		#page-wrap { width: 400px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+		p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
+	</style>
+</head>
+<body style="text-align: center;background-color: #FFFFFF; display:table; margin:50px;  " id="clock">
+	<div style="margin:25px;">
+		<h1>Welcome to the Client Scoring Tool</h1>
+		<br>
+		<h2>Please enter the required information below:</h2>
+		<br>
+		<form  method="POST">
+			{# This hidden_tag is a CSRF security feature. #}
+			{{ form.hidden_tag() }}
+			<h3>Chosen confidence level (recall), eg. 0.90 for 90% confidence:</h3>
+			<br>
+			<div style="text-align: left;">
+				{{ form.client_recall.label }} {{form.client_recall}}
+			</div>
+			<br>
+			<br>
+			<h3>Client parameters:</h3>
+			<br>
+			<div style="text-align: left;">
+				{{ form.EXT_SOURCE_3.label}}   {{form.EXT_SOURCE_3}}
+				<br>
+				{{ form.EXT_SOURCE_1.label}}   {{form.EXT_SOURCE_1}}
+				<br>
+				{{form.EXT_SOURCE_2.label}}   {{form.EXT_SOURCE_2}}
+				<br>
+				{{form.AMT_ANNUITY.label}}   {{form.AMT_ANNUITY}}
+				<br>
+				{{ form.DAYS_BIRTH.label }}   {{form.DAYS_BIRTH}}
+				<br>
+				{{ form.AMT_CREDIT.label}}   {{form.AMT_CREDIT}}
+				<br>
+				{{form.DAYS_LAST_PHONE_CHANGE.label}}   {{form.DAYS_LAST_PHONE_CHANGE}}
+				<br>
+				{{form.AMT_GOODS_PRICE.label}}   {{form.AMT_GOODS_PRICE}}
+				<br>
+				{{ form.DAYS_ID_PUBLISH.label }}   {{form.DAYS_ID_PUBLISH}}
+				<br>
+				{{ form.DAYS_EMPLOYED.label}}   {{form.DAYS_EMPLOYED}}
+				<br>
+				{{form.AMT_INCOME_TOTAL.label}}   {{form.AMT_INCOME_TOTAL}}
+				<br>
+				{{form.OWN_CAR_AGE.label}}   {{form.OWN_CAR_AGE}}
+			</div>
+			<br>
+			<br>
+			<div><b style="padding:50px;  ">{{ form.submit() }}</b></div>
+			<br>
+		</form>
+	</div>
+</body>
+</html>

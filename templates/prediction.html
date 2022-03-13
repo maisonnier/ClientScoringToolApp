@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" /> -->
+	<title>Document</title>
+	<style>
+		* { margin: 0; padding: 0; }
+
+		html {
+			background: url(static/images/wallstreet.jpg) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		#page-wrap { width: 400px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+		p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
+	</style>
+</head>
+<body style="text-align: center;background-color: #FFFFFF; display:table; margin:50px;  " id="clock">
+	<div style="margin:25px;">
+		<p align="left"><a href=home ><button class=grey style="height:50px;width:150px;color: #FF0000;" >HOME (New Analysis)</button></a></p>
+		<h1>Please find below the Client information you entered:</h1>
+		<br>
+		<ul style="text-align: left;">
+			<li>EXT_SOURCE_3: {{session['EXT_SOURCE_3']}}</li>
+			<li>EXT_SOURCE_1:  {{session['EXT_SOURCE_1']}}</li>
+			<li>EXT_SOURCE_2: {{session['EXT_SOURCE_2']}}</li>
+			<li>AMT_ANNUITY:  {{session['AMT_ANNUITY']}}</li>
+			<li>DAYS_BIRTH: {{session['DAYS_BIRTH']}}</li>
+			<li>AMT_CREDIT:  {{session['AMT_CREDIT']}}</li>
+			<li>DAYS_LAST_PHONE_CHANGE: {{session['DAYS_LAST_PHONE_CHANGE']}}</li>
+			<li>AMT_GOODS_PRICE:  {{session['AMT_GOODS_PRICE']}}</li>
+			<li>DAYS_ID_PUBLISH: {{session['DAYS_ID_PUBLISH']}}</li>
+			<li>DAYS_EMPLOYED:  {{session['DAYS_EMPLOYED']}}</li>
+			<li>AMT_INCOME_TOTAL: {{session['AMT_INCOME_TOTAL']}}</li>
+			<li>OWN_CAR_AGE:  {{session['OWN_CAR_AGE']}}</li>
+		</ul>
+		<br>
+		<h2>The Credit is: <b style="color: #FF0000;">{{results}}</b></h2>
+		<h2>Client probability of default: <b style="color: #FF0000;">{{client_proba}}</b></h2>
+		<br>
+		<p align="left"><a href=analyse ><button class=grey style="height:50px;width:150px">Client Credit Info Analysis</button></a></p>
+		<h3>Cut-off estimated:  <b style="color: #FF0000;">{{client_cutoff}}</b> for the selected confidence level (recall): <b style="color: #FF0000;">{{session['client_recall']}}</b> </h3>
+		<br>
+		<h4>Graph: X-axis: "Cut-off value in %", Y-axis: "Confidence level / Recall in %"</h4>
+		<img height="auto" width="60%" src='data:image/png;base64,{{data}}'/>
+	</div>
+</body>
+</html>
